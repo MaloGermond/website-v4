@@ -1,0 +1,25 @@
+/*=================================
+
+  Variable
+
+=================================*/
+:root {
+  --bp-small: 640px;
+  --bp-medium: 768px;
+  --bp-large: 1024px;
+  --background-color: #f3f9f7;
+  --text-color-high: #123e36;
+  --text-color-medium: #55726d;
+}
+
+/*=================================
+
+  Generals
+
+=================================*/
+* {
+  margin: 0;
+  font-family: satoshi;
+  color: var(--text-color-high);
+  background-color: var(--background-color);
+}
