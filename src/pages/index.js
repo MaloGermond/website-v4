@@ -10,7 +10,7 @@ const Container = styled.section`
   justify-content: left;
 
   max-width: var(--bp-medium);
-  min-height: 100%;
+  padding: 1rem;
   margin: auto;
 `
 

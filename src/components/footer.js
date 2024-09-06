@@ -5,7 +5,6 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 const Container = styled.header`
-  padding: 1rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,6 +12,9 @@ const Container = styled.header`
   position: sticky;
   top: 0;
   z-index: 1;
+
+  padding: 0 1rem;
+  margin: 1rem auto;
 `
 
 const Caption = styled.p`
