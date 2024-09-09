@@ -24,7 +24,7 @@ exports.onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
   setHeadComponents([
     <link
       rel="preload"
-      href="/fonts/Playfair-VariableFont.ttf"
+      href="/fonts/PlayfairDisplay-Medium.ttf"
       as="font"
       type="font/ttf"
       crossOrigin="anonymous"

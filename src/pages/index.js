@@ -19,7 +19,7 @@ const Title = styled.h1`
   font-family: playfair;
   font-size: 3.25rem;
   line-height: 3.5rem;
-  font-weight: 300;
+  font-weight: 100;
 
   margin: 0.3125rem 0 0.1875rem 0;
   padding: 0;
@@ -31,6 +31,8 @@ const SubTitle = styled.p`
 
   margin: 0.3125rem 0 0.1875rem 0;
   padding: 0;
+
+  color: var(--text-color-medium);
 `
 
 const Spacer8 = styled.div`
