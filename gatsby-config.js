@@ -9,8 +9,8 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Malo Germond`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Malo Germond - Product Designer - Marseille`,
+    description: `I deeply enjoy creating functional solutions that generate emotions.`,
     author: `@malogermond`,
     siteUrl: `https://malogermond.fr/`,
   },
