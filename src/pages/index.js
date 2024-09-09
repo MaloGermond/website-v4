@@ -1,5 +1,6 @@
-import * as React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
+import gsap from "gsap"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -35,22 +36,34 @@ const SubTitle = styled.p`
   color: var(--text-color-medium);
 `
 
-const Spacer8 = styled.div`
-  height: 0.5rem;
-`
-
-const IndexPage = () => (
-  <Layout showHeader="false">
-    <Container>
-      <Title>
-        This website is
-        <br />
-        under construction.
-      </Title>
-      <SubTitle>I’ll be back soon with nice projects.</SubTitle>
-    </Container>
-  </Layout>
-)
+const IndexPage = () => {
+  useEffect(() => {
+    gsap.fromTo(
+      ".header",
+      { opacity: 0 },
+      { opacity: 1, duration: 2, ease: "power1.inOut" }
+    )
+    gsap.fromTo(
+      ".subHeader",
+      { opacity: 0 },
+      { opacity: 1, duration: 2, ease: "power1.inOut", delay: 1 }
+    )
+  }, [])
+  return (
+    <Layout showHeader="false">
+      <Container>
+        <Title className="header">
+          This website is
+          <br />
+          under construction.
+        </Title>
+        <SubTitle className="subHeader">
+          I’ll be back soon with nice projects.
+        </SubTitle>
+      </Container>
+    </Layout>
+  )
+}
 
 /**
  * Head export to define metadata for the page
