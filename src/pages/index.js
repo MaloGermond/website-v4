@@ -12,17 +12,29 @@ const Container = styled.section`
   max-width: var(--bp-medium);
   padding: 1rem;
   margin: auto;
+  gap: 0;
 `
 
 const Title = styled.h1`
-  margin: 0.5rem 0;
   font-family: playfair;
-  font-size: 3rem;
+  font-size: 3.25rem;
+  line-height: 3.5rem;
   font-weight: 300;
+
+  margin: 0.3125rem 0 0.1875rem 0;
+  padding: 0;
 `
-const subTitle = styled.p`
+const SubTitle = styled.p`
   font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 300;
+
+  margin: 0.3125rem 0 0.1875rem 0;
+  padding: 0;
+`
+
+const Spacer8 = styled.div`
+  height: 0.5rem;
 `
 
 const IndexPage = () => (
@@ -31,9 +43,9 @@ const IndexPage = () => (
       <Title>
         This website is
         <br />
-        under maintenance.
+        under construction.
       </Title>
-      <subTitle>I’ll be back soon with nice projects.</subTitle>
+      <SubTitle>I’ll be back soon with nice projects.</SubTitle>
     </Container>
   </Layout>
 )
