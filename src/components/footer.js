@@ -1,6 +1,6 @@
-import * as React from "react"
-
+import React, { useEffect } from "react"
 import styled from "styled-components"
+import gsap from "gsap"
 
 import { Link } from "gatsby"
 
@@ -23,16 +23,28 @@ const Caption = styled.p`
   color: var(--text-color-medium);
 `
 
-const Footer = () => (
-  <Container>
-    <Caption>
-      Thanks to <a href="https://www.gatsbyjs.com"> Gatsby </a> community for
-      this awsome tool 🚀
-    </Caption>
-    <Caption>
-      Copyright 2016-{new Date().getFullYear()}- All Rights Reserved - Marseille
-    </Caption>
-  </Container>
-)
+const Footer = () => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      gsap.fromTo(
+        ".footer",
+        { opacity: 0, yPercent: 100 },
+        { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut", delay: 2 }
+      )
+    }
+  }, [])
+  return (
+    <Container className="footer">
+      <Caption>
+        Thanks to <a href="https://www.gatsbyjs.com"> Gatsby </a> community for
+        this awsome tool 🚀
+      </Caption>
+      <Caption>
+        Copyright 2016-{new Date().getFullYear()}- All Rights Reserved -
+        Marseille
+      </Caption>
+    </Container>
+  )
+}
 
 export default Footer
