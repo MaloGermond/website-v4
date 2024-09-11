@@ -7,8 +7,8 @@
 
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import styled, { ThemeProvider } from "styled-components"
 
-import styled from "styled-components"
 import Header from "./header"
 import Footer from "./footer"
 import "./style.css"
@@ -18,6 +18,8 @@ const Container = styled.div`
   flex-direction: column;
 
   min-height: 100vh;
+
+  background-color: ${props => props.theme.background};
 `
 
 const Content = styled.main`

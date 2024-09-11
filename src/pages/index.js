@@ -1,9 +1,17 @@
-import React, { useEffect } from "react"
-import styled from "styled-components"
+import React, { useEffect, useRef } from "react"
+import styled, { ThemeProvider } from "styled-components"
 import gsap from "gsap"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+
+const theme = {
+  backgroud: "#f3f9f7",
+  text: {
+    high: "#123e36",
+    medium: "#1f7c6c",
+  },
+}
 
 const Container = styled.section`
   display: flex;
@@ -22,6 +30,8 @@ const Title = styled.h1`
   line-height: 3.5rem;
   font-weight: 100;
 
+  color: ${props => props.theme.text.high};
+
   margin: 0.3125rem 0 0.1875rem 0;
   padding: 0;
 `
@@ -33,35 +43,41 @@ const SubTitle = styled.p`
   margin: 0.3125rem 0 0.1875rem 0;
   padding: 0;
 
-  color: var(--text-color-medium);
+  color: ${props => props.theme.text.medium};
 `
 
 const IndexPage = () => {
+  const header = useRef()
+  const subHeader = useRef()
+
   useEffect(() => {
     gsap.fromTo(
-      ".header",
+      header.current,
       { opacity: 0 },
       { opacity: 1, duration: 2, ease: "power1.inOut" }
     )
     gsap.fromTo(
-      ".subHeader",
+      subHeader.current,
       { opacity: 0 },
       { opacity: 1, duration: 2, ease: "power1.inOut", delay: 1 }
     )
   }, [])
+
   return (
-    <Layout showHeader="false">
-      <Container>
-        <Title className="header">
-          This website is
-          <br />
-          under construction.
-        </Title>
-        <SubTitle className="subHeader">
-          I’ll be back soon with nice projects.
-        </SubTitle>
-      </Container>
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <Layout showHeader="false">
+        <Container>
+          <Title ref={header}>
+            This website is
+            <br />
+            under construction.
+          </Title>
+          <SubTitle ref={subHeader}>
+            I’ll be back soon with nice projects.
+          </SubTitle>
+        </Container>
+      </Layout>
+    </ThemeProvider>
   )
 }
 

@@ -1,8 +1,8 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import gsap from "gsap"
 
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 
 const Container = styled.header`
   display: flex;
@@ -20,21 +20,23 @@ const Container = styled.header`
 const Caption = styled.p`
   font-size: 0.75rem;
   font-weight: 450;
-  color: var(--text-color-medium);
+  color: ${props => props.theme.text.medium};
 `
 
 const Footer = () => {
+  const container = useRef()
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       gsap.fromTo(
-        ".footer",
+        container.current,
         { opacity: 0, yPercent: 100 },
         { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut", delay: 2 }
       )
     }
   }, [])
   return (
-    <Container className="footer">
+    <Container ref={container}>
       <Caption>
         Thanks to <a href="https://www.gatsbyjs.com"> Gatsby </a> community for
         this awsome tool 🚀
