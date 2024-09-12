@@ -15,7 +15,7 @@ const Container = styled.section`
 `
 
 const Title = styled.h1`
-  font-family: playfair;
+  font-family: Playfair;
   font-size: 3.25rem;
   line-height: 3.5rem;
   font-weight: 100;
@@ -56,7 +56,7 @@ const IndexPage = () => {
       <Container>
         <Title ref={header}>
           I'm working <br />
-          on something new.
+          on something new!
         </Title>
         <SubTitle ref={subHeader}>
           I’ll be live shortly! Follow me on social media for updates.
