@@ -7,6 +7,7 @@ import Seo from "../components/seo"
 // Define light and dark themes
 const lightTheme = {
   background: "#f3f9f7",
+  transparent: "#f3f9f700",
   surface: {
     low: "#D1E2E2",
     medium: "#BBD9DA",
@@ -20,6 +21,7 @@ const lightTheme = {
 
 const darkTheme = {
   background: "#131713",
+  transparent: "#13171300",
   surface: {
     low: "#25332D",
     medium: "#BBD9DA",
@@ -39,8 +41,6 @@ const Container = styled.section`
   padding: 1rem;
   margin: auto;
   gap: 0;
-  background-color: ${props =>
-    props.theme.background}; /* Use theme background */
 `
 
 const Title = styled.h1`
@@ -63,12 +63,14 @@ const SubTitle = styled.p`
 `
 
 const ToggleButton = styled.button`
-  background-color: transparent;
-  border: 1px solid ${props => props.theme.text.high};
+  background-color: ${props => props.theme.surface.low};
+  border: 1px solid ${props => props.theme.transparent};
   color: ${props => props.theme.text.high};
+  border-radius: 1rem;
   padding: 0.5rem;
   cursor: pointer;
   margin-top: 1rem;
+  transition: 0.3s;
 `
 
 const IndexPage = () => {
@@ -114,12 +116,11 @@ const IndexPage = () => {
       <Layout showHeader="false">
         <Container>
           <Title ref={header}>
-            This website is
-            <br />
-            under construction.
+            We’re working <br />
+            on something new.
           </Title>
           <SubTitle ref={subHeader}>
-            I’ll be back soon with nice projects.
+            We’ll be live shortly! Follow us on social media for updates.
           </SubTitle>
           {/* Toggle Button */}
           <ToggleButton onClick={toggleTheme}>
