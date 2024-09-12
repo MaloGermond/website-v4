@@ -10,7 +10,7 @@
 module.exports = {
   siteMetadata: {
     title: `Malo Germond - Product Designer - Marseille`,
-    description: `I deeply enjoy creating functional solutions that generate emotions.`,
+    description: `Product Designer ⦁ I deeply enjoy creating functional solutions that generate emotions.`,
     author: `@malogermond`,
     siteUrl: `https://malogermond.fr/`,
   },
