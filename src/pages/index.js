@@ -58,9 +58,7 @@ const IndexPage = () => {
           I'm working <br />
           on something new!
         </Title>
-        <SubTitle ref={subHeader}>
-          I’ll be live shortly! Follow me on social media for updates.
-        </SubTitle>
+        <SubTitle ref={subHeader}>Live soon</SubTitle>
       </Container>
     </Layout>
   )
